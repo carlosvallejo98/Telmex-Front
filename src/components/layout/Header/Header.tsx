@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, activeMenu, onLogout }) =>
 
     try {
       setUploading(true);
-      const res = await fetch('http://localhost:5001/api/user/avatar', {
+      const res = await fetch('https://telmex.onrender.com/api/user/avatar', {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
         body: form,
