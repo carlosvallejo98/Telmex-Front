@@ -6,7 +6,7 @@ const API_BASE: string =
   // opcional: inyectable desde index.html si quieres (no requerido)
   ((typeof window !== 'undefined' && (window as any).__API_BASE__) as string) ||
   // fallback local (ajusta si tu backend corre en otro host/puerto)
-  'http://localhost:5001';
+  'https://telmex.onrender.com';
 
 /** ===== Helpers de auth/usuario en localStorage ===== */
 export type UserDTO = {

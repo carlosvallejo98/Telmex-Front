@@ -81,7 +81,7 @@ const App: React.FC = () => {
   function onReportClosedOk() {
     setReportTicket(null);
     setActiveMenu('tickets'); // vuelve a tickets
-    setHash('tickets');       // 👈 navegable
+    setHash('tickets');      
     setRefreshKey((x) => x + 1); // refresca lista
   }
 
@@ -96,7 +96,7 @@ const App: React.FC = () => {
           {activeMenu === 'tickets'  && <TicketsPage  onReport={onReport} refreshKey={refreshKey} />}
           {activeMenu === 'urgentes' && <UrgentesPage onReport={onReport} refreshKey={refreshKey} />}
           {activeMenu === 'history'  && <HistoryPage />}
-          {activeMenu === 'profile'  && null /* (lo tenías quitado del sidebar) */}
+          {activeMenu === 'profile'  && null }
 
           {activeMenu === 'report' && reportTicket && (
             <ReportPage
