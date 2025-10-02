@@ -1,0 +1,238 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.historyContainer {
+  padding: $spacing-xl;
+}
+
+.historyLayout {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: $spacing-xl;
+  height: calc(100vh - 140px);
+  margin-top: $spacing-lg;
+}
+
+.historyList {
+  overflow-y: auto;
+  padding-right: $spacing-md;
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-lg;
+}
+
+.historyItem {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  padding: $spacing-lg;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &.selected {
+    border-left-color: $primary-color;
+    background-color: lighten($primary-color, 45%);
+  }
+
+  h3 {
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-lg;
+  }
+}
+
+.itemMeta {
+  color: $gray;
+  font-size: $font-size-sm;
+  margin-bottom: $spacing-xs;
+
+  strong {
+    color: $dark-gray;
+  }
+}
+
+.historyDetail {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  padding: $spacing-xl;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.reportHeader {
+  border-bottom: $border-width solid $border-color;
+  padding-bottom: $spacing-md;
+  margin-bottom: $spacing-xl;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.serviceType {
+  color: $gray;
+  font-size: $font-size-sm;
+  margin: 0;
+}
+
+.reportMeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.metaItem {
+  p {
+    margin: 0;
+    
+    &.metaLabel {
+      font-weight: 600;
+      color: $dark-gray;
+      margin-bottom: $spacing-xs;
+      font-size: $font-size-sm;
+    }
+    
+    &.metaValue {
+      color: $gray;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.reportContent {
+  background: $light-gray;
+  padding: $spacing-lg;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-xl;
+
+  h3 {
+    color: $dark-gray;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.contentText {
+  color: $dark-gray;
+  line-height: 1.6;
+
+  p {
+    margin: 0 0 $spacing-sm 0;
+    white-space: pre-wrap;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.reportActions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: flex-end;
+}
+
+// Botones con estilos directos (sin mixins)
+.downloadButton {
+  background-color: $secondary-color;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+.emailButton {
+  background-color: $accent-color;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($accent-color, 10%);
+  }
+}
+
+.buttonIcon {
+  font-size: $font-size-lg;
+}
+
+.noSelection {
+  text-align: center;
+  color: $gray;
+  margin-top: $spacing-xl;
+  padding: $spacing-xl;
+  
+  h3 {
+    color: $dark-gray;
+    margin-bottom: $spacing-sm;
+  }
+  
+  p {
+    margin: 0;
+  }
+}
+
+.noSelectionIcon {
+  font-size: 3rem;
+  margin-bottom: $spacing-md;
+  opacity: 0.5;
+}
+
+// Responsive
+@include respond-to(md) {
+  .historyLayout {
+    grid-template-columns: 1fr;
+  }
+  
+  .historyList {
+    padding-right: 0;
+    margin-bottom: $spacing-xl;
+  }
+  
+  .reportActions {
+    flex-direction: column;
+    
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@include respond-to(sm) {
+  .historyGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reportMeta {
+    grid-template-columns: 1fr;
+  }
+}

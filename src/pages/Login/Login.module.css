@@ -1,0 +1,105 @@
+.loginContainer {
+  min-height: 100vh;
+  background: #34495e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.loginCard {
+  background: #2c3e50;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.logo {
+  width: 140px;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #5f6161;
+  margin-bottom: 1.5rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.loginForm input {
+  padding: 1rem;
+  border: 1px solid #5f6161;
+  border-radius: 8px;
+  background: #34495e;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.loginForm input::-moz-placeholder {
+  color: rgb(145.875, 148.125, 148.125);
+}
+.loginForm input::placeholder {
+  color: rgb(145.875, 148.125, 148.125);
+}
+.loginForm input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+.loginForm input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+.loginForm button {
+  background: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.loginForm button:hover:not(:disabled) {
+  background: #2980b9;
+}
+.loginForm button:disabled {
+  background: #5f6161;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  background: rgb(242.1780821918, 159.3698630137, 150.8219178082);
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.loginFooter {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #5f6161;
+}
+.loginFooter a {
+  color: #3498db;
+  font-weight: 500;
+}
+.loginFooter a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Login.module.css.map */

@@ -1,0 +1,124 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+/* Contenedor principal de la vista */
+.ticketsView {
+  padding: $spacing-xl;
+}
+
+/* Título de sección */
+.title {
+  margin: 0;
+  color: $primary-color;
+  font-size: $font-size-xl;
+  font-weight: 700;
+}
+
+/* Lista de tarjetas */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+}
+
+/* Tarjeta de ticket */
+.card {
+  @include card;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+/* Encabezado de la tarjeta */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Lado izquierdo del header (badge + título) */
+.left {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+/* Badge de prioridad */
+.priority {
+  font-size: $font-size-xs;
+  font-weight: 800;
+  letter-spacing: .4px;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background: $light-gray;
+  color: $dark-gray;
+  text-transform: uppercase;
+}
+
+/* Variantes de prioridad */
+.urgent {
+  background: lighten($accent-color, 35%);  /* ← rojo según tus variables */
+  color: darken($accent-color, 10%);
+  border-color: lighten($accent-color, 20%);
+}
+
+.normal {
+  background: lighten($primary-color, 45%);
+  color: darken($primary-color, 10%);
+  border-color: lighten($primary-color, 20%);
+}
+
+/* Título del ticket */
+.ticketTitle {
+  margin: 0;
+  color: $dark-gray;
+  font-size: $font-size-lg;
+  font-weight: 700;
+}
+
+/* Estado (derecha del header) */
+.status {
+  font-size: $font-size-sm;
+  color: $gray;
+}
+
+/* Descripción del ticket */
+.description {
+  color: $gray;
+  line-height: 1.5;
+}
+
+/* Acciones (parte inferior de la tarjeta) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Botón Hacer reporte */
+.reportButton {
+  background-color: $primary-color;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .2s ease, transform .05s ease;
+
+  &:hover {
+    background-color: $primary-dark;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* Responsive */
+@include respond-to(sm) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

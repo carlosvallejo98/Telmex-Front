@@ -1,0 +1,163 @@
+.reportContainer {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reportForm {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  padding: 2rem;
+}
+.reportForm:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userPhoto {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid #3498db;
+}
+
+.ticketInfo {
+  text-align: right;
+}
+.ticketInfo h3 {
+  color: #3498db;
+  margin-bottom: 0.25rem;
+}
+.ticketInfo p {
+  color: #5f6161;
+}
+
+.metaRow {
+  font-size: 0.875rem;
+  color: #34495e;
+  margin-bottom: 0.25rem;
+}
+
+/* === inputs de archivo estilizados (foto y adjuntos) === */
+.inlineFile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.hiddenFile {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
+
+.fileButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #3498db;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.fileButton:hover {
+  background: #2980b9;
+}
+.fileButton:active {
+  transform: translateY(1px);
+}
+
+.fileNote {
+  font-size: 0.875rem;
+  color: #5f6161;
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+}
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #34495e;
+}
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 200px;
+}
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.errorText {
+  color: #e74c3c;
+  margin-top: 0;
+}
+
+.reportActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancelButton {
+  background-color: #5f6161;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cancelButton:hover {
+  background-color: rgb(69.765625, 71.234375, 71.234375);
+}
+
+.submitButton {
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.submitButton:hover {
+  background-color: #2980b9;
+}/*# sourceMappingURL=ReportView.module.css.map */

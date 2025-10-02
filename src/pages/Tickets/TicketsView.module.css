@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* Contenedor principal de la vista */
+.ticketsView {
+  padding: 2rem;
+}
+
+/* Título de sección */
+.title {
+  margin: 0;
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Lista de tarjetas */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Tarjeta de ticket */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Encabezado de la tarjeta */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Lado izquierdo del header (badge + título) */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Badge de prioridad */
+.priority {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  color: #34495e;
+  text-transform: uppercase;
+}
+
+/* Variantes de prioridad */
+.urgent {
+  background: rgb(250.5616438356, 221.897260274, 218.9383561644); /* ← rojo según tus variables */
+  color: rgb(213.698630137, 43.8356164384, 26.301369863);
+  border-color: rgb(242.1780821918, 159.3698630137, 150.8219178082);
+}
+
+.normal {
+  background: rgb(246.9309623431, 250.9058577406, 253.5690376569);
+  color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+  border-color: rgb(138.6359832636, 195.9581589958, 234.3640167364);
+}
+
+/* Título del ticket */
+.ticketTitle {
+  margin: 0;
+  color: #34495e;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Estado (derecha del header) */
+.status {
+  font-size: 0.875rem;
+  color: #5f6161;
+}
+
+/* Descripción del ticket */
+.description {
+  color: #5f6161;
+  line-height: 1.5;
+}
+
+/* Acciones (parte inferior de la tarjeta) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Botón Hacer reporte */
+.reportButton {
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+}
+.reportButton:hover {
+  background-color: #2980b9;
+}
+.reportButton:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (min-width: 576px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=TicketsView.module.css.map */

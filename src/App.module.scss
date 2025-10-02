@@ -1,0 +1,64 @@
+@import './styles/abstracts/variables';
+@import './styles/abstracts/mixins';
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 0;
+  position: relative;
+}
+
+.welcomeContainer {
+  width: 100%;
+  height: 100vh;
+  background-image: url('//helpdesk-frontend/public/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+  }
+}
+
+.welcomeText {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: $spacing-xl;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: $spacing-lg;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+}

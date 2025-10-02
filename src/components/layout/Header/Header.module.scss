@@ -1,0 +1,249 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
+
+.header {
+  background: $white;
+  border-bottom: $border-width solid $border-color;
+  padding: $spacing-md $spacing-lg;
+  @include flex-between;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: $shadow-sm;
+}
+
+/* Soportar .left/.right antiguos sin romper */
+
+.headerLeft {
+  gap: $spacing-md;
+  flex: 1;
+}
+
+.menuButton {
+  @include button-reset;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  @include flex-center;
+  transition: background-color 0.25s ease;
+
+  &:hover { background-color: $light-gray; }
+
+  i {
+    width: 28px;   /* Ícono más grande */
+    height: 28px;
+    color: $dark-gray;
+  }
+}
+
+.headerCenter {
+  @include flex-center;
+  flex: 1;
+
+  .headerImage {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+.headerRight {
+  @include flex-center;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  flex: 1;
+}
+
+/* ====== Perfil (nombre que abre tarjeta) ====== */
+.profileContainer { position: relative; }
+
+.profileButton {
+  @include button-reset;
+  @include flex-center;
+  gap: $spacing-sm;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  transition: background-color 0.2s ease;
+
+  &:hover { background: $light-gray; }
+
+  .avatarThumb {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .avatarFallback {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: $primary-color;
+    color: $white;
+    @include flex-center;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  .userName {
+    font-weight: 600;
+    color: $dark-gray;
+  }
+
+  i { width: 18px; height: 18px; color: $gray; }
+}
+
+.profileMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-lg;
+  width: 320px;
+  overflow: hidden;
+  z-index: 1001;
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+
+  &.menuOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.profileInfo {
+  padding: $spacing-lg;
+  border-bottom: $border-width solid $border-color;
+}
+
+.profileHeader {
+  @include flex-between;
+  gap: $spacing-md;
+
+  .profilePhoto, .profilePhotoFallback {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $primary-color;
+    @include flex-center;
+    color: $white;
+    background: $primary-color;
+    font-weight: 700;
+  }
+}
+
+.profileName { font-weight: 700; color: $dark-gray; }
+.profileRole { color: $gray; font-size: $font-size-sm; }
+
+.profileDetails {
+  margin-top: $spacing-md;
+
+  .detailItem {
+    @include flex-between;
+    margin-top: $spacing-sm;
+
+    .detailLabel { font-weight: 600; color: $dark-gray; font-size: $font-size-sm; }
+    .detailValue { color: $gray; font-size: $font-size-sm; }
+  }
+}
+
+.menuActions {
+  padding: $spacing-sm;
+
+  .menuItem {
+    width: 100%;
+    @include button-reset;
+    @include flex-between;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    border-radius: $border-radius;
+    transition: background 0.2s ease;
+    color: $dark-gray;
+    position: relative;
+
+    &:hover { background: $light-gray; }
+
+    i { width: 18px; height: 18px; }
+
+    span { font-size: $font-size-sm; font-weight: 600; }
+
+    /* input file oculto en la opción "Subir foto" */
+    .hiddenFile {
+      position: absolute; inset: 0;
+      opacity: 0; cursor: pointer;
+    }
+  }
+}
+
+/* ====== Sidebar oscuro (no cambié su estructura) ====== */
+.sidebarOverlay {
+  position: fixed;
+  top: 70px; left: 0;
+  width: 100%; height: calc(100vh - 70px);
+  background: rgba(0,0,0,0.45);
+  z-index: 998;
+  opacity: 0; visibility: hidden;
+  transition: all 0.25s ease;
+
+  &.overlayOpen { opacity: 1; visibility: visible; }
+}
+
+.sidebar {
+  position: fixed;
+  top: 70px; left: -100%;
+  width: 280px; height: calc(100vh - 70px);
+  background: #0b1220; /* casi negro */
+  color: #f0f0f0;
+  box-shadow: $shadow-lg;
+  z-index: 999;
+  transition: left 0.25s ease;
+  padding: $spacing-lg $spacing-md;
+  overflow-y: auto;
+
+  &.sidebarOpen { left: 0; }
+}
+
+.sidebarTitle {
+  color: #f0f0f0;
+  margin: 0 0 $spacing-md  $spacing-sm;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.sidebarMenu { list-style: none; margin: 0; padding: 0; }
+
+.sidebarMenuItem {
+  margin-bottom: $spacing-xs;
+
+  > button {
+    @include button-reset;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    border-radius: $border-radius;
+    color: #e8e8e8;
+    transition: background 0.2s ease, transform 0.15s ease;
+
+    i { width: 20px; height: 20px; color: #cfcfcf; }
+    span { text-align: left; letter-spacing: 0.6px; }
+
+    &:hover { background: #1a1a1a; transform: translateX(2px); }
+  }
+
+  &.active > button {
+    background: #222;
+    color: #ffffff;
+  }
+}
+
+/* Responsive */
+@include respond-to(sm) {
+  .headerImage { height: 40px; }
+}

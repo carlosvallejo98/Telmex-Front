@@ -1,0 +1,112 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.loginContainer {
+  min-height: 100vh;
+  background: $dark-gray; // Fondo negro/oscuro ya definido en tus variables
+  @include flex-center;
+  padding: $spacing-md;
+}
+
+.loginCard {
+  background: $black; // caja central aún más oscura
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-xl;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  color: $white;
+}
+
+.logo {
+  width: 140px;
+  margin: 0 auto $spacing-lg auto;
+  display: block;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: $spacing-xs;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $gray;
+  margin-bottom: $spacing-lg;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  input {
+    padding: $spacing-md;
+    border: $border-width solid $gray;
+    border-radius: $border-radius;
+    background: $dark-gray;
+    color: $white;
+    font-size: $font-size-md;
+
+    &::placeholder {
+      color: lighten($gray, 20%);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.25);
+    }
+
+    &:disabled {
+      background-color: $light-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  button {
+    background: $primary-color;
+    color: $white;
+    border: none;
+    padding: $spacing-md;
+    border-radius: $border-radius;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: $primary-dark;
+    }
+
+    &:disabled {
+      background: $gray;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.errorMessage {
+  background: lighten($accent-color, 20%);
+  color: $white;
+  padding: $spacing-sm;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-md;
+}
+
+.loginFooter {
+  margin-top: $spacing-lg;
+  font-size: $font-size-sm;
+  color: $gray;
+
+  a {
+    color: $primary-color;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
