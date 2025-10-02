@@ -1,5 +1,5 @@
 // src/App.tsx
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/layout/Header/Header';
 import Login from './pages/Login/Login';
 import TicketsPage from './pages/Tickets/TicketsPage';

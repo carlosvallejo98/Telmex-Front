@@ -65,7 +65,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
         <div className={styles.loginFooter}>
           <p>¿Olvidaste tu contraseña?</p>
-          <a href="#">Recuperar acceso</a>
         </div>
       </div>
     </div>
